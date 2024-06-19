@@ -1,0 +1,5 @@
+.dart_tool/
+test/
+*.exe
+
+.vscode
