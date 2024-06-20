@@ -14,6 +14,8 @@ dart create -t console [project]
 
 - 📁lib
     - 📄[project].dart
+- 📁test
+    - 📄[project].dart
 - 📄README.md
 - 📄CHANGELOG.md
 - 📄.gitignore
