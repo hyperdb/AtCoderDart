@@ -1,5 +1,40 @@
+# --- Dart/Pub settings ---
+# Pubが内部で使用するディレクトリ（必須）
 .dart_tool/
+
+# 依存関係の解決用ファイル（古いDartツール用）
+.packages
+
+# 厳密にするには含めない方が良いが、頻繁に変更されるため無視することが多い
+pubspec.lock
+
+
+# ビルド成果物が出力されるディレクトリ
+build/
+
+# コンパイル済みの実行ファイル（Windows/Linux/macOS）
+# dart compile exe 等で生成されたもの
+*.exe
+*.js
+*.dill
+
+# --- Competitive Programming Specific ---
+# テスト用の入力・出力ファイルを手動で作る場合
+in.txt
+out.txt
+*.out
+*.ans
+
+# --- Editor settings (VS Code) ---
+.vscode/
+# 特定の拡張機能が作るキャッシュなど
+.history/
 test/
+
+# --- OS specific ---
+.DS_Store
+Thumbs.db
+
+.env*
 *.exe
 
-.vscode
