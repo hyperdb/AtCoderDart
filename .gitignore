@@ -27,6 +27,7 @@ out.txt
 
 # --- Editor settings (VS Code) ---
 .vscode/
+!.vscode/AtCoderDart.code-snippets
 # 特定の拡張機能が作るキャッシュなど
 .history/
 test/
