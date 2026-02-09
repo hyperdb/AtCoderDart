@@ -31,3 +31,21 @@ dart run
 ```bash
 dart compile exe bin/[project].dart
 ```
+
+## ライブラリ
+
+```text
+advance_math =
+bit_array =
+collection =
+decimal =
+fast_immutable_collections =
+min_max_heap =
+more =
+ordered_set =
+scidart =
+segment_tree =
+sorted_list =
+sortedmap =
+z3 =
+```
