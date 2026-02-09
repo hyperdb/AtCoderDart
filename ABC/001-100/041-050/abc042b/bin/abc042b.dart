@@ -4,13 +4,13 @@
  */
 import "dart:io";
 
+List<int> getIntList() {
+  return stdin.readLineSync()!.split(' ').map(int.parse).toList();
+}
+
 (int, int) getIntMap() {
-  var s = stdin.readLineSync();
-  if (s == null) {
-    return (0, 0);
-  }
-  var items = s.split(" ").map(int.parse).toList();
-  return (items[0], items[1]);
+  final List<int> n = getIntList();
+  return (n[0], n[1]);
 }
 
 List<String> getStringRow(int N) {

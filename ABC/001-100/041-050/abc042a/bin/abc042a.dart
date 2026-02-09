@@ -5,14 +5,13 @@
 import "dart:io";
 
 List<int> getIntList() {
-  final String? s = stdin.readLineSync();
-  return s == null ? [] : s.split(" ").map(int.parse).toList();
+  return stdin.readLineSync()!.split(' ').map(int.parse).toList();
 }
 
 /*
  * リスト比較
  */
-bool compareList(List<int> src, List<int> dest) {
+bool compareIntList(List<int> src, List<int> dest) {
   for (int i = 0; i < src.length; i++) {
     if (src[i] != dest[i]) {
       return false;
@@ -27,7 +26,7 @@ bool compareList(List<int> src, List<int> dest) {
 void main() {
   final List<int> abc = getIntList();
 
-  abc.sort((a, b) => a.compareTo(b));
+  abc.sort();
 
-  print(compareList(abc, <int>[5, 5, 7]) ? 'YES' : 'NO');
+  print(compareIntList(abc, <int>[5, 5, 7]) ? 'YES' : 'NO');
 }

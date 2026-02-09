@@ -5,8 +5,7 @@
 import "dart:io";
 
 String getString() {
-  final String? s = stdin.readLineSync();
-  return s ?? "";
+  return stdin.readLineSync()!;
 }
 
 /*

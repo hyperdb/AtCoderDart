@@ -5,13 +5,11 @@
 import "dart:io";
 
 int getInt() {
-  var i = stdin.readLineSync();
-  return i == null ? -1 : int.parse(i);
+  return int.parse(stdin.readLineSync()!);
 }
 
 List<int> getIntList() {
-  var s = stdin.readLineSync();
-  return s == null ? [] : s.split(" ").map(int.parse).toList();
+  return stdin.readLineSync()!.split(' ').map(int.parse).toList();
 }
 
 /*

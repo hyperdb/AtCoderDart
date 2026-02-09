@@ -1,6 +1,6 @@
 /*
  * ABC-043 B - バイナリハックイージー
- * https://atcoder.jp/contests/abc043/tasks/abc043_b 
+ * https://atcoder.jp/contests/abc043/tasks/abc043_b
  */
 import "dart:io";
 
