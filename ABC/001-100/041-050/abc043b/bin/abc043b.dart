@@ -1,13 +1,20 @@
+/*
+ * ABC-043 B - バイナリハックイージー
+ * https://atcoder.jp/contests/abc043/tasks/abc043_b 
+ */
 import "dart:io";
 
 String getString() {
   return stdin.readLineSync() ?? "";
 }
 
+/*
+ * メイン処理
+ */
 void main() {
-  String S = getString();
+  final String S = getString();
 
-  List<String> buf = [];
+  final List<String> buf = [];
   S.split('').forEach((c) {
     if (c == 'B') {
       if (buf.isNotEmpty) {

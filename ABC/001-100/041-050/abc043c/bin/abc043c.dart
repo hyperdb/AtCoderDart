@@ -1,3 +1,7 @@
+/*
+ * ABC-043 C - いっしょ
+ * https://atcoder.jp/contests/abc043/tasks/arc059_a
+ */
 import "dart:io";
 
 int getInt() {
@@ -10,6 +14,9 @@ List<int> getIntList() {
   return s == null ? [] : s.split(" ").map(int.parse).toList();
 }
 
+/*
+ * コスト計算
+ */
 int getCost(List<int> data, int n) {
   int cost = 0;
   for (var d in data) {
@@ -19,19 +26,22 @@ int getCost(List<int> data, int n) {
   return cost;
 }
 
+/*
+ * メイン処理
+ */
 void main() {
-  var p = getInt();
+  final int N = getInt();
 
-  if (p > 0) {
-    var data = getIntList();
-    var sum = data.reduce((value, element) => value + element);
-    var ave = sum / data.length;
+  if (N > 0) {
+    final List<int> data = getIntList();
+    final int sum = data.reduce((value, element) => value + element);
+    final double ave = sum / data.length;
     if (ave % 1.0 > 0.0) {
-      var c1 = getCost(data, ave.floor());
-      var c2 = getCost(data, ave.ceil());
+      final int c1 = getCost(data, ave.floor());
+      final int c2 = getCost(data, ave.ceil());
       print(c1 < c2 ? c1 : c2);
     } else {
-      var c = getCost(data, ave.toInt());
+      final int c = getCost(data, ave.toInt());
       print(c);
     }
   } else {

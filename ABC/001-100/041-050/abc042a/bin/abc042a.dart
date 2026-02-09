@@ -1,10 +1,17 @@
+/*
+ * ABC-042 A - 和風いろはちゃんイージー
+ * https://atcoder.jp/contests/abc042/tasks/abc042_a
+ */
 import "dart:io";
 
 List<int> getIntList() {
-  var s = stdin.readLineSync();
+  final String? s = stdin.readLineSync();
   return s == null ? [] : s.split(" ").map(int.parse).toList();
 }
 
+/*
+ * リスト比較
+ */
 bool compareList(List<int> src, List<int> dest) {
   for (int i = 0; i < src.length; i++) {
     if (src[i] != dest[i]) {
@@ -14,8 +21,11 @@ bool compareList(List<int> src, List<int> dest) {
   return true;
 }
 
+/*
+ * メイン処理
+ */
 void main() {
-  List<int> abc = getIntList();
+  final List<int> abc = getIntList();
 
   abc.sort((a, b) => a.compareTo(b));
 

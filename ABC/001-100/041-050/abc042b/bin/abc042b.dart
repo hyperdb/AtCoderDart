@@ -1,17 +1,28 @@
+/*
+ * ABC-042 B - 文字列大好きいろはちゃんイージー
+ * https://atcoder.jp/contests/abc042/tasks/abc042_b
+ */
 import "dart:io";
 
-List<int> getIntList() {
+(int, int) getIntMap() {
   var s = stdin.readLineSync();
-  return s == null ? [] : s.split(" ").map(int.parse).toList();
+  if (s == null) {
+    return (0, 0);
+  }
+  var items = s.split(" ").map(int.parse).toList();
+  return (items[0], items[1]);
 }
 
-List<String> getStringRow(N) {
+List<String> getStringRow(int N) {
   return List.generate(N, (_) => stdin.readLineSync() ?? '');
 }
 
+/*
+ * メイン処理
+ */
 void main() {
-  List nk = getIntList();
-  List str = getStringRow(nk[0]);
+  final (N, K) = getIntMap();
+  List<String> str = getStringRow(N);
 
   str.sort((a, b) => a.compareTo(b));
 
