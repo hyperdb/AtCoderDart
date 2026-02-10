@@ -36,6 +36,14 @@ test/
 .DS_Store
 Thumbs.db
 
+# --- dart create で生成される一般的な無視設定 ---
+.dart_tool
+lib
+/*/**/.gitignore
+/*/**/CHANGELOG.md
+/*/**/README.md
+
+#--- Sensitive files ---
 .env*
 *.exe
 
