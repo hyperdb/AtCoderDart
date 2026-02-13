@@ -15,12 +15,15 @@ void main() {
   final String S = getString();
 
   final List<String> buf = [];
+  // バッファを一文字ずつ処理
   S.split('').forEach((c) {
+    // 'B'ならバッファの最後の文字を削除
     if (c == 'B') {
       if (buf.isNotEmpty) {
         buf.removeLast();
       }
     } else {
+      // それ以外なら追加
       buf.add(c);
     }
   });

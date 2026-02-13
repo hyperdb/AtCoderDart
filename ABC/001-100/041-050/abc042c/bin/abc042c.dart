@@ -26,9 +26,11 @@ void main() {
   final (N, K) = getIntMap();
   final List<int> d = getIntList();
 
+  // N以上の金額を順にチェック
   for (int i = N; i < 100000; i++) {
     int price = i;
     bool result = true;
+    // 桁ごとに嫌いな数字リストに含まれないかチェック
     while (price > 0) {
       int digit = price % 10;
       if (d.contains(digit)) {
@@ -37,6 +39,7 @@ void main() {
       }
       price = price ~/ 10;
     }
+    // 好きな数字だけで構成されている場合は出力して終了
     if (result) {
       print(i);
       break;

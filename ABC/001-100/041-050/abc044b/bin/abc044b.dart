@@ -14,11 +14,11 @@ String getString() {
 void main() {
   final s = getString();
   Map<String, int> counter = {};
-
+  // 文字ごとにカウント
   for (var char in s.split('')) {
     counter[char] = (counter[char] ?? 0) + 1;
   }
-
+  // 文字ごとの出現回数がすべて偶数かチェック
   counter.forEach((key, value) {
     if (value % 2 != 0) {
       print("No");

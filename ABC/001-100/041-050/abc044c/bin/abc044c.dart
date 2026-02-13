@@ -26,8 +26,11 @@ void main() {
     (index) => List.generate(N * 50 + 1, (index) => base.toList()),
   );
 
+  // 初期状態
   dp[0][0][0] = 1;
 
+  // DP(動的計画法)
+  // i: カードの枚数(何番目のカードか), j: カードの合計値, k: 選んだカードの枚数
   for (var i = 0; i < N; i++) {
     for (var j = 0; j <= x.reduce((a, b) => a + b); j++) {
       for (var k = 0; k <= N; k++) {
@@ -40,8 +43,11 @@ void main() {
   }
 
   int result = 0;
+  // カードの枚数が1枚以上N枚以下で、合計値がA*kのものを数える
+  // 平均がA → 合計はA*k (kは選んだカードの枚数) となるため
   for (var k = 1; k <= N; k++) {
     result += dp[N][A * k][k];
   }
+  // 結果を出力
   print(result);
 }

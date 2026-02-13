@@ -44,6 +44,7 @@ void main() {
   ];
 
   int p = 0;
+  // 初期プレイヤーを0(A)とし、手札が無くなるまでゲームを続ける
   while (p >= 0) {
     p = playGame(p, d);
   }

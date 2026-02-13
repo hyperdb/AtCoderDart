@@ -16,6 +16,6 @@ void main() {
   final int K = getInt();
   final int X = getInt();
   final int Y = getInt();
-
+  // 泊数がK未満の場合とそれ以外で場合分け
   print(N < K ? N * X : K * X + (N - K) * Y);
 }

@@ -13,6 +13,6 @@ int getInt() {
  */
 void main() {
   final int N = getInt();
-
+  // 等差数列の和の公式を利用
   print((N + 1) * N ~/ 2);
 }
