@@ -12,11 +12,11 @@ String getString() {
  * メイン処理
  */
 void main() {
-  final String S = getString();
+  final String str = getString();
 
   final List<String> buf = [];
   // バッファを一文字ずつ処理
-  S.split('').forEach((c) {
+  str.split('').forEach((c) {
     // 'B'ならバッファの最後の文字を削除
     if (c == 'B') {
       if (buf.isNotEmpty) {

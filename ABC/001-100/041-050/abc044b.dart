@@ -10,12 +10,12 @@ String getString() {
 
 /*
  * メイン処理
- */
+  */
 void main() {
-  final s = getString();
+  final String str = getString();
   Map<String, int> counter = {};
   // 文字ごとにカウント
-  for (var char in s.split('')) {
+  for (var char in str.split('')) {
     counter[char] = (counter[char] ?? 0) + 1;
   }
   // 文字ごとの出現回数がすべて偶数かチェック

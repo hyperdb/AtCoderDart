@@ -21,8 +21,8 @@ List<String> getStringRow(int N) {
  * メイン処理
  */
 void main() {
-  final (N, K) = getIntMap();
-  List<String> str = getStringRow(N);
+  final (num, len) = getIntMap();
+  List<String> str = getStringRow(num);
 
   str.sort((a, b) => a.compareTo(b));
 

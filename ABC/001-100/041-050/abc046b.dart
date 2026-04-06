@@ -16,15 +16,15 @@ List<int> getIntList() {
 }
 
 void main() {
-  final (N, K) = getIntMap();
+  final (balls, colors) = getIntMap();
 
   // ボールが1個のときは、K通りの塗り方がある
-  if (N == 1) {
-    print(K);
+  if (balls == 1) {
+    print(colors);
   } else {
     // ボールが複数の場合は、
     //　最初のボールはK通り、
     //　2個目以降のボールは前のボールと同じ色に塗れないため、(K - 1)通りの塗り方がある
-    print((K * pow((K - 1), (N - 1))).toInt());
+    print((colors * pow((colors - 1), (balls - 1))).toInt());
   }
 }

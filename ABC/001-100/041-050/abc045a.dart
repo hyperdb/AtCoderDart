@@ -13,9 +13,9 @@ int getInt() {
  * メイン関数
  */
 void main() {
-  final int X = getInt();
-  final int Y = getInt();
-  final int H = getInt();
+  final int top = getInt();
+  final int bottom = getInt();
+  final int height = getInt();
   // 台形の面積 = (上底 + 下底) × 高さ ÷ 2
-  print(((X + Y) * H / 2).toInt());
+  print(((top + bottom) * height / 2).toInt());
 }

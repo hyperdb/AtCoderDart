@@ -1,6 +1,6 @@
 /*
  * ABC-042 C - こだわり者いろはちゃん
- * https://atcoder.jp/contests/abc042/tasks/abc042_c
+ * https://atcoder.jp/contests/abc042/tasks/arc058_a
  */
 
 import "dart:io";
@@ -23,21 +23,21 @@ List<int> getIntList() {
  * メイン処理
  */
 void main() {
-  final (N, K) = getIntMap();
+  final (price, unlike) = getIntMap();
   final List<int> d = getIntList();
 
-  // N以上の金額を順にチェック
-  for (int i = N; i < 100000; i++) {
-    int price = i;
+  // price以上の金額を順にチェック
+  for (int i = price; i < 100000; i++) {
+    int paidPrice = i;
     bool result = true;
     // 桁ごとに嫌いな数字リストに含まれないかチェック
-    while (price > 0) {
-      int digit = price % 10;
+    while (paidPrice > 0) {
+      int digit = paidPrice % 10;
       if (d.contains(digit)) {
         result = false;
         break;
       }
-      price = price ~/ 10;
+      paidPrice = paidPrice ~/ 10;
     }
     // 好きな数字だけで構成されている場合は出力して終了
     if (result) {

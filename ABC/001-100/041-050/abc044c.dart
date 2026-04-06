@@ -17,13 +17,13 @@ List<int> getIntList() {
  * メイン処理
  */
 void main() {
-  var (N, A) = getIntMap();
-  var x = getIntList();
+  var (num, average) = getIntMap();
+  var cards = getIntList();
 
-  List<int> base = List.generate(N + 1, (index) => 0);
+  List<int> base = List.generate(num + 1, (index) => 0);
   List<List<List<int>>> dp = List.generate(
-    N + 1,
-    (index) => List.generate(N * 50 + 1, (index) => base.toList()),
+    num + 1,
+    (index) => List.generate(num * 50 + 1, (index) => base.toList()),
   );
 
   // 初期状態
@@ -31,22 +31,22 @@ void main() {
 
   // DP(動的計画法)
   // i: カードの枚数(何番目のカードか), j: カードの合計値, k: 選んだカードの枚数
-  for (var i = 0; i < N; i++) {
-    for (var j = 0; j <= x.reduce((a, b) => a + b); j++) {
-      for (var k = 0; k <= N; k++) {
+  for (var i = 0; i < num; i++) {
+    for (var j = 0; j <= cards.reduce((a, b) => a + b); j++) {
+      for (var k = 0; k <= num; k++) {
         if (dp[i][j][k] == 0) continue;
 
         dp[i + 1][j][k] += dp[i][j][k];
-        dp[i + 1][j + x[i]][k + 1] += dp[i][j][k];
+        dp[i + 1][j + cards[i]][k + 1] += dp[i][j][k];
       }
     }
   }
 
   int result = 0;
-  // カードの枚数が1枚以上N枚以下で、合計値がA*kのものを数える
-  // 平均がA → 合計はA*k (kは選んだカードの枚数) となるため
-  for (var k = 1; k <= N; k++) {
-    result += dp[N][A * k][k];
+  // カードの枚数が1枚以上num枚以下で、合計値がaverage*kのものを数える
+  // 平均がaverage → 合計はaverage*k (kは選んだカードの枚数) となるため
+  for (var k = 1; k <= num; k++) {
+    result += dp[num][average * k][k];
   }
   // 結果を出力
   print(result);

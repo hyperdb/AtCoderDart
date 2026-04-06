@@ -12,7 +12,7 @@ int getInt() {
  * メイン処理
  */
 void main() {
-  final int N = getInt();
+  final int num = getInt();
   // 等差数列の和の公式を利用
-  print((N + 1) * N ~/ 2);
+  print((num + 1) * num ~/ 2);
 }

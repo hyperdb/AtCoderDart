@@ -11,15 +11,15 @@ String getString() {
 
 final List<String> playerNames = ['A', 'B', 'C'];
 
-int playGame(int p, List<List<String>> d) {
+int playGame(int player, List<List<String>> draw) {
   // 手札が無くなったら終了
-  if (d[p].isEmpty) {
-    print(playerNames[p]);
+  if (draw[player].isEmpty) {
+    print(playerNames[player]);
     return -1;
   }
 
   // 最初のカードをめくる->次のプレイヤーへ
-  int score = switch (d[p].removeAt(0)) {
+  int score = switch (draw[player].removeAt(0)) {
     "a" => 0,
     "b" => 1,
     "c" => 2,
@@ -37,15 +37,15 @@ int playGame(int p, List<List<String>> d) {
  * メイン関数
  */
 void main() {
-  List<List<String>> d = [
+  List<List<String>> draw = [
     getString().split(""),
     getString().split(""),
     getString().split(""),
   ];
 
-  int p = 0;
+  int player = 0;
   // 初期プレイヤーを0(A)とし、手札が無くなるまでゲームを続ける
-  while (p >= 0) {
-    p = playGame(p, d);
+  while (player >= 0) {
+    player = playGame(player, draw);
   }
 }

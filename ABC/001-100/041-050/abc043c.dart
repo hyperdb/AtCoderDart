@@ -28,10 +28,10 @@ int getCost(List<int> data, int n) {
  * メイン処理
  */
 void main() {
-  final int N = getInt();
+  final int num = getInt();
 
   // データ数が0より大きい場合のみ処理
-  if (N > 0) {
+  if (num > 0) {
     final List<int> data = getIntList();
     // 平均値を計算
     final int sum = data.reduce((value, element) => value + element);

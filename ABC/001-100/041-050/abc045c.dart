@@ -48,20 +48,20 @@ List<List<int>> combination(List<int> list, int n) {
  */
 void main() {
   // 受け取ったパラメータを一文字ずつ分割してリスト化
-  final List<String> S = getString().split("");
+  final List<String> str = getString().split("");
   // `+`の位置の候補リスト
-  final List<int> T = List.generate(S.length - 1, (index) => index);
+  final List<int> patterns = List.generate(str.length - 1, (index) => index);
 
   // 合計値
   int sum = 0;
   // `+`の個数を増やしていく
-  for (int i = 0; i < T.length; i++) {
+  for (int i = 0; i < patterns.length; i++) {
     // `+`を入れる位置の組み合わせを全探索
-    for (final List<int> c in combination(T, i + 1)) {
+    for (final List<int> c in combination(patterns, i + 1)) {
       int n = 0;
-      for (int j = 0; j < S.length; j++) {
+      for (int j = 0; j < str.length; j++) {
         // 一文字ずつ桁を繰り上げ
-        n = n * 10 + int.parse(S[j]);
+        n = n * 10 + int.parse(str[j]);
         // `+`なら合計値に加算して桁をリセット
         if (c.contains(j)) {
           sum += n;
@@ -72,6 +72,6 @@ void main() {
     }
   }
   // `+`を一つも入れない場合
-  sum += int.parse(S.join());
+  sum += int.parse(str.join());
   print(sum);
 }

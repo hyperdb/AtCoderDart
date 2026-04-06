@@ -10,7 +10,7 @@ List<int> getIntList() {
 }
 
 void main() {
-  final List<int> L = getIntList();
+  final List<int> listColor = getIntList();
   // 重複を削除して、残った要素数を出力
-  print(L.toSet().toList().length);
+  print(listColor.toSet().toList().length);
 }
