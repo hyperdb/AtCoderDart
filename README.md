@@ -4,21 +4,9 @@
 
 ## プロジェクト作成
 
-以下のコマンドで生成した後、不要なディレクトリやファイルは削除する。
-
-```bash
-dart create -t console [project]
-```
-
-削除するファイル・ディレクトリ
-
-- 📁lib
-    - 📄[project].dart
-- 📁test
-    - 📄[project].dart
-- 📄README.md
-- 📄CHANGELOG.md
-- 📄.gitignore
+`workspace/atcoder`で解答を作成するように変更しました。
+解答を`bin/atcoder.dart`を保存場所にリネームして移動します。
+ファイル移動用のバッチファイル`mv.bat`の移動先を書き換えて実行すれば問題ありません。
 
 ## テスト
 
@@ -26,10 +14,10 @@ dart create -t console [project]
 dart run
 ```
 
-## コンパイル(AtCoder)
+データを投入する場合は以下のようにします。
 
 ```bash
-dart compile exe bin/[project].dart
+dart run < in.txt
 ```
 
 ## ライブラリ
